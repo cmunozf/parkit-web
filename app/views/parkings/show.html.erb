@@ -1,0 +1,11 @@
+<h1> This is the parking information zone! </h1>
+
+</br>
+<b>Nombre:</b> <%= @parking.name %>
+</br>
+<b> Descripcion:</b> <%= @parking.description %>
+</br>
+<b>Espacios:</b> <%= @parking.slots.length %>
+
+</br>
+<%= link_to "Editar", edit_parking_path(@parking), class: "btn btn-primary btn-xs" %>

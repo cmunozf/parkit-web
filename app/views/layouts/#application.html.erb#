@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parkitapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <div class="container">
+	<%= link_to "Parkit", home_index_path, id: "logo" %>
+	
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   home_index_path %></li>
+            <li><%= link_to "Parkings",   parkings_path %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+	
+      </div>
+
+    </div>
+  </header>
+  
+  <div id="main-container" class="container">
+    <div class="row">
+      <div class="col-xs-3">
+	<h3> Parkit app</h3>
+      </div>
+      <div class="col-xs-6">
+	<% if notice %>
+	<p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	<p class="alert alert-danger"><%= alert %></p>
+	<% end %>	
+	<%= yield %>
+      </div>
+    </div>
+  </div>    
+
+</body>
+</html>
